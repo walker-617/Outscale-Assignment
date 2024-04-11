@@ -200,8 +200,8 @@ namespace Player
 		if (event_service->pressedRightArrowKey() || event_service->pressedDKey()) 
 			moveRight();
 
-		//if (event_service->pressedLeftMouseButton()) 
-		//	processBulletFire();
+		if (event_service->pressedLeftMouseButton()) 
+			processBulletFire();
 	}
 
 	void PlayerController::moveLeft()
@@ -220,6 +220,11 @@ namespace Player
 
 		currentPosition.x = std::min(currentPosition.x, player_model->right_most_position.x);
 		player_model->setPlayerPosition(currentPosition);
+	}
+
+	void PlayerController::processBulletFire()
+	{
+		//fire bullets
 	}
 
 	void PlayerController::updateFreezDuration()
